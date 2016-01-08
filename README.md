@@ -1,9 +1,20 @@
 # Debug 模式与 Release 模式的区分
 
 <br />
-如果在 Swift 项目中区分 Debug 模式与 Release 模式，需要添加 `-DDEBUG`。（不推荐）
+区分 Debug 模式与 Release 模式有两种方法：
+####第一种方法：
 
-还有一种方法是通过 Preprocessor Macros (预处理宏命令) 来区分模式。
+在 (Build Settings -> Swift Compiler - Custom Flags) 中加入 `-DDEBUG`，
+[Stackoverflow](http://stackoverflow.com/questions/24111854/in-absence-of-preprocessor-macros-is-there-a-way-to-define-practical-scheme-spe/#answer-24112024)。
+
+![](http://i.stack.imgur.com/dqp5H.png)
+
+但是在 NSHipster 中有提到不推荐此方法 [Avoiding -DDEBUG in Swift](http://nshipster.com/new-years-2016/#avoiding--ddebug-in-swift)
+
+<br />
+####第二种方法
+
+通过 Preprocessor Macros (预处理宏命令) 来区分模式。
 
 <br />
 
@@ -76,5 +87,6 @@ if DEBUG_BUILD {
 ![](https://raw.githubusercontent.com/Limon-O-O/DEBUGBUILD/master/images/PreprocessorMacros.png)
 
 <br />
+
 抽取于干货极多的：[Reader Submissions -
 New Year's 2016](http://nshipster.com/new-years-2016/)  🍺
